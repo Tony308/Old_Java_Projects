@@ -1,0 +1,117 @@
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+public class membersList {
+	private ArrayList<Members> members;
+	
+	public membersList() 
+	{
+		members = new ArrayList<>();
+	}
+	public void add(Members member) {
+		members.add(member);
+	}
+	
+	public void readCSVFile(String filename) {
+try {	//Creates a FileReader wrapped BufferedReader
+		BufferedReader buffReader = new BufferedReader(new FileReader(filename));	
+		//Reads files line by line.
+		String line = null;
+		//Error thrown if value being read = null
+		while ((line = buffReader.readLine()) != null) {	
+			String[] tokens = line.split(",");
+			int MemberID = Integer.parseInt(tokens[0]);
+			String firstName = tokens[1].trim();
+			String surname = tokens[2].trim();
+			String DateOfBirth = tokens[3].trim();
+			String email = tokens[4].trim();
+			String telephone = tokens[5].trim();
+			String mobile = tokens[6].trim();
+			Members newMember = new Members(MemberID, firstName, surname, DateOfBirth, email, telephone, mobile);
+			members.add(newMember);
+		}
+	}
+	catch (IOException e) {
+			e.printStackTrace();
+			System.exit(1);
+		}
+	}//End readCSVFile
+	
+	public ArrayList<Members> getMembers(){
+		return members;
+	}
+	
+	public int idGenerator(){
+		int id = (int) (new Date()).getTime();
+		return id;
+	}
+	
+	public void delete() throws IOException {
+		try {
+		/**
+		 * getSelectedRow() returns -1 if its null;
+		 * Stops the code from executing if no row has been selected.
+		 */
+			if (Integer.valueOf(MainUI.table.getSelectedRow()) == -1){
+				JOptionPane.showMessageDialog(null, "You haven't selected a member.", "Mistake", JOptionPane.ERROR_MESSAGE, null);
+				return;
+			}
+			
+			//Wraps FileReader with BufferedReader.
+			BufferedReader br = new BufferedReader(new FileReader("MembersList.csv"));
+			ArrayList<String> rows = new ArrayList<>();
+			/**
+			 * FUCKING BROKEN
+			 */
+			boolean condition = true;
+			int rowHolder = MainUI.table.getSelectedRow();
+			int x = 10;
+			
+			//br.readLine() needs to be iterated.......
+			while ((rows.add(br.readLine())) != false){
+				//for loop that will iterate through the items in the ArrayList.
+				for (String row: rows){
+					String[] tokens = row.split(",");
+					//Gets user's selected JTable row.
+					//int holder = MainUI.table.getSelectedRow();
+				while (x > 0 || (condition = false)){
+					System.out.println(rows);
+					System.out.println("Row = " + row);
+						/*
+						 * Compares each value from a row to the user's selected value.
+						 * Comparison Equals false FOR WHAT EVER FUCKING REASON
+						 */
+						if ((tokens[0] == MainUI.table.getValueAt(rowHolder, 0)) == false){
+							System.out.println("DELETE THIS SHIT");
+							return;
+							condition = false;
+							x--;
+						}else {
+						/*	System.out.println(tokens[0]); // equals 1
+							System.out.println(MainUI.table.getValueAt(rowHolder, 0)); //ALSO EQUALS 1
+							System.out.println(tokens[0] == MainUI.table.getValueAt(rowHolder, 0));*/
+							System.out.println("dafuq you doing");
+							x--;
+						}
+				}
+			}
+		}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
+	}
+	
+}
+

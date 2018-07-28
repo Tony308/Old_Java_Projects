@@ -1,0 +1,52 @@
+/*import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;*/
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+public class UI {
+
+	private JFrame frmHome;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UI window = new UI();
+					window.frmHome.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public UI() {
+		initialize();
+	}
+
+
+	 // Initialize the contents of the frame.
+	 
+	private void initialize() {
+		frmHome = new JFrame();
+		frmHome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmHome.setTitle("Member Manager");
+		frmHome.getContentPane().setLayout(null);
+		frmHome.setSize(643, 441);
+		frmHome.setLocation(50, 50);
+	}
+}

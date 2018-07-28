@@ -1,0 +1,6 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:dbconn,org.eclipse.launchbar.core.descriptorType.default\:Main,org.eclipse.launchbar.core.descriptorType.default\:MainFrame,org.eclipse.launchbar.core.descriptorType.default\:MainMenu,org.eclipse.launchbar.core.descriptorType.default\:MainUI (2),org.eclipse.launchbar.core.descriptorType.default\:MainUI,org.eclipse.launchbar.core.descriptorType.default\:No_1,org.eclipse.launchbar.core.descriptorType.default\:UI,org.eclipse.launchbar.core.descriptorType.default\:xperimet,org.eclipse.launchbar.core.descriptorType.default\:MainFrame (1),org.eclipse.launchbar.core.descriptorType.default\:MainUI (1),org.eclipse.launchbar.core.descriptorType.default\:Main (2),org.eclipse.launchbar.core.descriptorType.default\:Experiment,org.eclipse.launchbar.core.descriptorType.default\:Main (1)
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:dbconn/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:dbconn/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

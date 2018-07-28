@@ -1,0 +1,9 @@
+19:16:30 **** Incremental Build of configuration Debug for project Greetings ****
+Info: Configuration "Debug" uses tool-chain "MinGW GCC" that is unsupported on this system, attempting to build anyway.
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o HelloWorld.o "..\\HelloWorld.cpp" 
+Cannot run program "g++": Launching failed
+
+Error: Program "g++" not found in PATH
+PATH=[\bin;\bin;\usr\bin;D:/Programs Files/Java/jre1.8.0_131/bin/server;D:/Programs Files/Java/jre1.8.0_131/bin;D:/Programs Files/Java/jre1.8.0_131/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Programs Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Users\tonyh\AppData\Local\Microsoft\WindowsApps;;C:\Users\tonyh\Desktop]
+
